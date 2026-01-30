@@ -95,13 +95,15 @@ const animateOnScroll = new IntersectionObserver((entries) => {
 
 // Observe elements with fade-in animations
 const observeElements = () => {
-    const elements = document.querySelectorAll('.philosophy-item, .project, .expertise-category, .vision-text p');
+    const elements = document.querySelectorAll('.philosophy-item, .project, .expertise-category, .vision-text p, .intro-eyebrow, .intro-title, .intro-badge, .intro-text p');
     elements.forEach(el => {
-        // Reset initial state for observer
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        animateOnScroll.observe(el);
+        // Only apply observer styles to elements that aren't in the intro (intro has its own animations)
+        if (!el.closest('.intro')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            animateOnScroll.observe(el);
+        }
     });
 };
 
@@ -127,6 +129,7 @@ updateFooterYear();
 // ================================
 
 const heroBackground = document.querySelector('.hero-background');
+const introSection = document.querySelector('.intro');
 
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -134,6 +137,13 @@ window.addEventListener('scroll', () => {
     
     if (heroBackground && scrolled < window.innerHeight) {
         heroBackground.style.transform = `translateY(${rate}px)`;
+    }
+    
+    // Fade out intro section as user scrolls down
+    if (introSection) {
+        const introHeight = introSection.offsetHeight;
+        const opacity = 1 - (scrolled / introHeight) * 1.5;
+        introSection.style.opacity = Math.max(0, opacity);
     }
 });
 
