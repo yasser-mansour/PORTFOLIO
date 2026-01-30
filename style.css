@@ -114,6 +114,132 @@ ul {
 }
 
 /* ================================
+   Introduction Section
+   ================================ */
+
+.intro {
+    padding: calc(var(--spacing-2xl) + 60px) 0 var(--spacing-2xl);
+    background: 
+        linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+}
+
+.intro-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-eyebrow {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-md);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.1s forwards;
+}
+
+.intro-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-md);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    position: relative;
+    display: inline-block;
+}
+
+.intro-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    opacity: 0;
+    animation: expandWidth 0.6s ease 0.8s forwards;
+}
+
+.intro-identity {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.intro-badge {
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-base);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.intro-badge:nth-child(1) { animation-delay: 0.4s; }
+.intro-badge:nth-child(2) { animation-delay: 0.5s; }
+.intro-badge:nth-child(3) { animation-delay: 0.6s; }
+
+.intro-badge:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.intro-text {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: left;
+}
+
+.intro-text p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--color-text-secondary);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.intro-text p:nth-child(1) { animation-delay: 0.7s; }
+.intro-text p:nth-child(2) { animation-delay: 0.9s; }
+
+/* Smooth transition element between intro and hero */
+.intro::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(180deg, transparent 0%, var(--color-background) 100%);
+    pointer-events: none;
+}
+
+/* ================================
    Navigation
    ================================ */
 
@@ -209,12 +335,12 @@ ul {
    ================================ */
 
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
     overflow: hidden;
 }
 
@@ -786,6 +912,17 @@ ul {
     }
 }
 
+@keyframes expandWidth {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 60px;
+    }
+}
+
 @keyframes scrollLine {
     0%, 100% {
         transform: scaleY(1);
@@ -812,6 +949,22 @@ ul {
         --spacing-lg: 3rem;
         --spacing-xl: 4rem;
         --spacing-2xl: 5rem;
+    }
+    
+    .intro {
+        padding: calc(var(--spacing-xl) + 60px) 0 var(--spacing-lg);
+    }
+    
+    .intro-title::after {
+        width: 40px;
+    }
+    
+    .intro-text {
+        text-align: left;
+    }
+    
+    .intro-text p {
+        font-size: 1rem;
     }
     
     .nav-links {
@@ -876,6 +1029,15 @@ ul {
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--spacing-sm);
+    }
+    
+    .intro-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .intro-title {
+        font-size: 2.5rem;
     }
     
     .project {
