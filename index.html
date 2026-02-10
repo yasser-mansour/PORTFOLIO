@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yasser Mansour builds production systems for schools and businesses in Morocco.">
-    <title>Yasser Mansour</title>
+    <meta name="description" content="Yasser Mansour builds production Django systems for schools and businesses in Morocco — multi-tenant platforms, SMS infrastructure, and dependable backend architecture.">
+    <title>Yasser Mansour — Full-Stack Web Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,34 +27,38 @@
     </nav>
 
     <main>
+        <!-- HERO SECTION - REDESIGNED -->
         <section class="intro" id="intro">
             <div class="container">
                 <div class="intro-grid">
                     <div class="intro-image">
                         <img src="yasserpro.png" alt="Yasser Mansour" width="280" height="280">
                     </div>
+                    
                     <div class="intro-content">
-                        <h1>
-                            <span class="intro-name">Yasser Mansour</span>
-                            <span class="intro-location">El Jadida, Morocco</span>
+                        <div class="intro-eyebrow">Full-Stack Web Developer</div>
+                        <h1 class="intro-headline">
+                            I build production systems that schools and businesses use daily.
                         </h1>
                         
-                        <div class="intro-text">
-                            <p>Since I was 13, I've been building systems that operate in production. Not prototypes or demo, systems that schools use to track attendance, that businesses use for daily operations, that send thousands of SMS/Email notifications.</p>
-                            
-                            <p>My approach is straightforward: identify a concrete problem, build a solution that works reliably, and refine it based on how it's actually used. The technology matters, but what matters more is whether the system does what it's supposed to do, day after day.</p>
-                            
-                            <p>I work primarily with Django for backend architecture and standard web technologies for interfaces. The focus is on systems that need to be dependable.</p>
+                        <p class="intro-proof">
+I’ve shipped real-world systems used daily — including SMS infrastructure serving schools across Morocco and field data collection tools that replaced paper workflows...</p>
+                        <div class="intro-approach">
+                            <p>My approach: identify concrete problems, build reliable solutions, and refine them based on real usage. Reliability always comes first.</p>
                         </div>
                         
                         <div class="intro-meta">
                             <div class="meta-item">
-                                <span class="meta-label">Focus</span>
-                                <span class="meta-value">Production systems</span>
+                                <span class="meta-label">Based in</span>
+                                <span class="meta-value">El Jadida, Morocco</span>
                             </div>
                             <div class="meta-item">
-                                <span class="meta-label">Specialty</span>
-                                <span class="meta-value">Django backend</span>
+                                <span class="meta-label">Primary Stack</span>
+                                <span class="meta-value">Django · Python · PostgreSQL · JavaScript · AWS S3</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Current Focus</span>
+                                <span class="meta-value">Multi-tenant SaaS</span>
                             </div>
                         </div>
                     </div>
@@ -62,6 +66,7 @@
             </div>
         </section>
 
+        <!-- WORK SECTION -->
         <section class="work" id="work">
             <div class="container">
                 <div class="section-header">
@@ -80,36 +85,23 @@
                         </header>
                         <div class="project-content">
                             <p class="project-description">School attendance and parent notification platform used by schools across Morocco. Built the SMS infrastructure that handles thousands of daily notifications—automated alerts for absences, schedule changes, administrative announcements.</p>
+                            
+                            <div class="project-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-value">1000s</span>
+                                    <span class="metric-label">Daily SMS</span>
+                                </div>
+                            </div>
+                            
                             <ul class="project-tech">
                                 <li>Django</li>
                                 <li>SMS Infrastructure</li>
                                 <li>Multi-tenant</li>
-                                <li>Authentication System</li>
+                                <li>PostgreSQL</li>
                             </ul>
                         </div>
                         <footer class="project-footer">
                             <span class="project-category">Education Technology</span>
-                        </footer>
-                    </article>
-
-                    <article class="project-card">
-                        <header class="project-header">
-                            <div class="project-status">
-                                <span class="status-dot"></span>
-                                <span class="status-text">Active</span>
-                            </div>
-                            <h3 class="project-title">AllDoc</h3>
-                        </header>
-                        <div class="project-content">
-                            <p class="project-description">Digital forms for field technicians. Replaces paper-based reporting with mobile data collection.</p>
-                            <ul class="project-tech">
-                                <li>Django</li>
-                                <li>PWA</li>
-                                <li>Mobile-First</li>
-                            </ul>
-                        </div>
-                        <footer class="project-footer">
-                            <span class="project-category">Business Tools</span>
                         </footer>
                     </article>
 
@@ -133,10 +125,31 @@
                             <span class="project-category">Internal Systems</span>
                         </footer>
                     </article>
+
+                    <article class="project-card">
+                        <header class="project-header">
+                            <div class="project-status">
+                                <span class="status-dot"></span>
+                                <span class="status-text">Active</span>
+                            </div>
+                            <h3 class="project-title">AllDoc</h3>
+                        </header>
+                        <div class="project-content">
+                            <p class="project-description">Digital forms for field technicians. Replaces paper-based reporting with mobile data collection.</p>
+                            <ul class="project-tech">
+                                <li>Django</li>
+                                <li>PWA</li>
+                                <li>Mobile-First</li>
+                            </ul>
+                        </div>
+                        <footer class="project-footer">
+                            <span class="project-category">Business Tools</span>
+                        </footer>
+                    </article>
                 </div>
 
                 <div class="projects-divider">
-                    <span class="divider-text">Earlier Projects</span>
+                    <span class="divider-text">Other Work</span>
                 </div>
 
                 <div class="projects-secondary">
@@ -153,7 +166,7 @@
                             <h3 class="project-secondary-title">ManoStock</h3>
                             <span class="project-secondary-status">Paused</span>
                         </header>
-                        <p class="project-secondary-description">Inventory and billing system for small businesses. Tracks stock, sales, expenses, and generates invoices. Built for shop owners who needed simpler alternatives to existing accounting software.</p>
+                        <p class="project-secondary-description">Inventory and billing system for small businesses. Tracks stock, sales, expenses, and generates invoices.</p>
                     </article>
 
                     <article class="project-secondary">
@@ -161,79 +174,70 @@
                             <h3 class="project-secondary-title">MANYO</h3>
                             <span class="project-secondary-status">Paused</span>
                         </header>
-                        <p class="project-secondary-description">Social platform experiment combining video content, stories, and marketplace features. Built to understand complex multi-module architecture. Served its learning purpose.</p>
+                        <p class="project-secondary-description">Social platform experiment combining video content, stories, and marketplace features. Built to understand complex multi-module architecture.</p>
                     </article>
                 </div>
-            </div>
-        </section>
-
-        <section class="principles">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Technical Perspective</h2>
-                    <p class="section-subtitle">How I approach system architecture</p>
-                </div>
                 
-                <div class="principles-grid">
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="principle-title">Reliability First</h3>
-                        <p class="principle-description">Systems must work when people depend on them. SMS notifications must deliver, data must persist, interfaces must respond. This informs architecture decisions, error handling, and testing.</p>
-                    </div>
-                    
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-                                <path d="M2 17L12 22L22 17"/>
-                                <path d="M2 12L12 17L22 12"/>
-                            </svg>
-                        </div>
-                        <h3 class="principle-title">Structured Simplicity</h3>
-                        <p class="principle-description">Complex systems should be composed of simple, well-defined parts. Clear separation of concerns, consistent patterns, and maintainable code are more valuable than clever solutions.</p>
-                    </div>
-                    
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                                <line x1="12" y1="22.08" x2="12" y2="12"/>
-                            </svg>
-                        </div>
-                        <h3 class="principle-title">Production Mindset</h3>
-                        <p class="principle-description">
-Systems are built for production from day one, with authentication, backups, and user management considered early.
-</p>
-</div>
+                <!-- INLINE CTA -->
+                <div class="cta-inline">
+                    <p>Working on a system that needs to run 24/7?</p>
+                    <a href="#contact" class="cta-link">Let's discuss your project <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT SECTION - REDESIGNED -->
         <section class="contact" id="contact">
             <div class="container">
-                <div class="contact-grid">
+                <div class="contact-wrapper">
                     <div class="contact-content">
-                        <h2>Contact</h2>
-                        <p class="contact-description">For technical discussions, project work, or systems architecture consultation.</p>
-                        <p class="contact-note">Response time is typically within less than 24 hours.</p>
+                        <div class="contact-eyebrow">Let's Work Together</div>
+                        <h2 class="contact-headline">Building something that needs to work reliably?</h2>
+                        <p class="contact-description">I’m currently available for full-stack web development, system design, and production-ready projects. If you’re building something that needs to work reliably in the real world, let’s talk.</p>
+                        
+                        <div class="contact-fit">
+                            <div class="fit-title">Best fit for:</div>
+                            <ul class="fit-list">
+        <li>Production web applications</li>
+        <li>Internal and customer-facing platforms</li>
+        <li>Notification-driven systems (SMS, email)</li>
+        <li>Django-based full-stack projects</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="contact-methods">
-                        <div class="contact-item">
-                            <div class="contact-label">Primary</div>
-                            <a href="mailto:mansouryasser002@gmail.com" class="contact-value">mansouryasser002@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-label">Work</div>
-                            <a href="mailto:yasser@absencescolaire.com" class="contact-value">yasser@absencescolaire.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-label">Phone</div>
-                            <a href="tel:+212647955576" class="contact-value">+212 6 47 95 55 76</a>
+                    
+                    <div class="contact-action">
+                        <div class="contact-card">
+                            <div class="contact-primary">
+                                <div class="contact-method-label">Primary Contact</div>
+                                <a href="mailto:mansouryasser002@gmail.com" class="contact-cta">
+                                    mansouryasser@gmail
+                                    <svg class="cta-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            
+                            <div class="contact-divider"></div>
+                            
+                            <div class="contact-secondary">
+                                <div class="contact-method">
+                                    <span class="method-label">Work Email</span>
+                                    <a href="mailto:yasser@absencescolaire.com" class="method-link">yasser@absencescolaire.com</a>
+                                </div>
+                                <div class="contact-method">
+                                    <span class="method-label">Phone</span>
+                                    <a href="tel:+212647955576" class="method-link">+212 647 955 576</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-note">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1"/>
+                                    <path d="M8 11V8M8 5.5V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>Typically respond within 12 hours</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,8 +250,6 @@ Systems are built for production from day one, with authentication, backups, and
             <div class="footer-content">
                 <div class="footer-copyright">
                     <span>© 2026 Yasser Mansour</span>
-                    <span class="footer-separator">·</span>
-                    <span>El Jadida, Morocco</span>
                 </div>
                 <div class="footer-links">
                     <a href="https://www.instagram.com/yasser._mansour" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
@@ -259,3 +261,4 @@ Systems are built for production from day one, with authentication, backups, and
     <script src="script.js"></script>
 </body>
 </html>
+
