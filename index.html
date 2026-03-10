@@ -1,287 +1,727 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yasser Mansour builds production Django systems for schools and businesses in Morocco – multi-tenant platforms, SMS infrastructure, and dependable backend architecture.">
-    <title>Yasser Mansour – Full-Stack Web Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@350;400;450;500;550;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yasser Mansour — Full-Stack Developer & Software Founder based in El Jadida, Morocco. Building SaaS platforms, AI-powered tools, and production software." />
+  <title>Yasser Mansour — Full-Stack Developer & Founder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
-    <nav class="nav" id="nav">
-        <div class="container nav-container">
-            <a href="#intro" class="nav-logo">YM</a> 
-            <div class="nav-controls">
-                <div class="nav-links">
-                    <a href="#work" class="nav-link" data-i18n="nav.work">Work</a>
-                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-                </div>
-                <div class="nav-utilities">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <svg class="theme-icon theme-icon-light" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M9 1v1M9 16v1M17 9h-1M2 9H1M14.5 3.5l-.7.7M4.2 13.8l-.7.7M14.5 14.5l-.7-.7M4.2 4.2l-.7-.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                        <svg class="theme-icon theme-icon-dark" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M16 10.5A7 7 0 117.5 2a5.5 5.5 0 008.5 8.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="lang-switcher">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <span class="lang-divider">·</span>
-                        <button class="lang-btn" data-lang="fr">FR</button>
-                        <span class="lang-divider">·</span>
-                        <button class="lang-btn" data-lang="ar">AR</button>
-                    </div>
-                </div>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-            </button>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ══════════════════ NAVIGATION ══════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <span>YM</span><span class="logo-dot">.</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#home"     class="nav__link">Home</a>
+        <a href="#about"    class="nav__link">About</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#skills"   class="nav__link">Skills</a>
+        <a href="#journey"  class="nav__link">Journey</a>
+        <a href="#contact"  class="nav__link">Contact</a>
+      </nav>
+
+      <div class="nav__right">
+        <a href="#contact" class="nav__cta">Hire Me</a>
+        <button class="nav__burger" id="burger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero__noise"></div>
+    <div class="hero__grid-bg"></div>
+    <div class="hero__orbs">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+    </div>
+
+    <div class="hero__container">
+
+      <!-- TEXT COLUMN -->
+      <div class="hero__text-col">
+        <div class="hero__badge fade-up">
+          <span class="badge-pulse"></span>
+          Open to opportunities &amp; collaborations
         </div>
-    </nav>
 
-    <main>
-        <!-- HERO SECTION - REDESIGNED -->
-        <section class="intro" id="intro">
-            <div class="container">
-                <div class="intro-grid">
-                    <div class="intro-image">
-                        <img src="yasserpro.png" alt="Yasser Mansour" width="280" height="280">
-                    </div>
-                    
-                    <div class="intro-content">
-                        <div class="intro-eyebrow" data-i18n="intro.eyebrow">Full-Stack Web Developer</div>
-                        <h1 class="intro-headline" data-i18n="intro.headline">
-                            I build production systems that schools and businesses use daily.
-                        </h1>
-                        
-                        <p class="intro-proof" data-i18n="intro.proof">
-I've shipped real-world systems used daily — including SMS infrastructure serving schools across Morocco and field data collection tools that replaced paper workflows...</p>
-                        <div class="intro-approach">
-                            <p data-i18n="intro.approach">My approach: identify concrete problems, build reliable solutions, and refine them based on real usage. Reliability always comes first.</p>
-                        </div>
-                        
-                        <div class="intro-meta">
-                            <div class="meta-item">
-                                <span class="meta-label" data-i18n="intro.meta.location.label">Based in</span>
-                                <span class="meta-value" data-i18n="intro.meta.location.value">El Jadida, Morocco</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label" data-i18n="intro.meta.stack.label">Primary Stack</span>
-                                <span class="meta-value" data-i18n="intro.meta.stack.value">Django · Python · PostgreSQL · JavaScript · AWS S3</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label" data-i18n="intro.meta.focus.label">Current Focus</span>
-                                <span class="meta-value" data-i18n="intro.meta.focus.value">Multi-tenant SaaS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h1 class="hero__name fade-up">
+          <span class="name-first">Yasser</span>
+          <span class="name-last">Mansour</span>
+        </h1>
 
-        <!-- WORK SECTION -->
-        <section class="work" id="work">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="work.title">Systems in Production</h2>
-                    <p class="section-subtitle" data-i18n="work.subtitle">Projects that are actively used</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <article class="project-card project-card-main">
-                        <header class="project-header">
-                            <div class="project-status">
-                                <span class="status-dot"></span>
-                                <span class="status-text" data-i18n="work.status.active">Active</span>
-                            </div>
-                            <h3 class="project-title">SuivEdu</h3>
-                        </header>
-                        <div class="project-content">
-                            <p class="project-description" data-i18n="work.projects.suivedu.description">School attendance and parent notification platform used by schools across Morocco. Built the SMS infrastructure that handles thousands of daily notifications—automated alerts for absences, schedule changes, administrative announcements.</p>
-                            
-                            <div class="project-metrics">
-                                <div class="metric-item">
-                                    <span class="metric-value">1000s</span>
-                                    <span class="metric-label" data-i18n="work.projects.suivedu.metric">Daily SMS</span>
-                                </div>
-                            </div>
-                            
-                            <ul class="project-tech">
-                                <li>Django</li>
-                                <li data-i18n="work.tech.sms">SMS Infrastructure</li>
-                                <li data-i18n="work.tech.multitenant">Multi-tenant</li>
-                                <li>PostgreSQL</li>
-                            </ul>
-                        </div>
-                        <footer class="project-footer">
-                            <span class="project-category" data-i18n="work.category.education">Education Technology</span>
-                        </footer>
-                    </article>
+        <p class="hero__role fade-up">
+          Full-Stack Developer <em class="role-amp">&amp;</em> Software Founder
+        </p>
 
-                    <article class="project-card">
-                        <header class="project-header">
-                            <div class="project-status">
-                                <span class="status-dot"></span>
-                                <span class="status-text" data-i18n="work.status.active">Active</span>
-                            </div>
-                            <h3 class="project-title">LTErrazi</h3>
-                        </header>
-                        <div class="project-content">
-                            <p class="project-description" data-i18n="work.projects.lterrazi.description">Internal platform for a technical high school. Includes messaging, announcements, temporary discussion rooms, and a point system for student engagement. Built for daily internal communication.</p>
-                            <ul class="project-tech">
-                                <li>Django</li>
-                                <li data-i18n="work.tech.messaging">Real-time Messaging</li>
-                                <li data-i18n="work.tech.rbac">Role-based Access</li>
-                            </ul>
-                        </div>
-                        <footer class="project-footer">
-                            <span class="project-category" data-i18n="work.category.internal">Internal Systems</span>
-                        </footer>
-                    </article>
+        <p class="hero__desc fade-up">
+          Self-taught developer building real-world software platforms, SaaS systems,
+          and AI-powered applications —&nbsp;<span class="hero__origin">from El Jadida, Morocco.</span>
+        </p>
 
-                    <article class="project-card">
-                        <header class="project-header">
-                            <div class="project-status">
-                                <span class="status-dot"></span>
-                                <span class="status-text" data-i18n="work.status.active">Active</span>
-                            </div>
-                            <h3 class="project-title">AllDoc</h3>
-                        </header>
-                        <div class="project-content">
-                            <p class="project-description" data-i18n="work.projects.alldoc.description">Digital forms for field technicians. Replaces paper-based reporting with mobile data collection.</p>
-                            <ul class="project-tech">
-                                <li>Django</li>
-                                <li>PWA</li>
-                                <li data-i18n="work.tech.mobile">Mobile-First</li>
-                            </ul>
-                        </div>
-                        <footer class="project-footer">
-                            <span class="project-category" data-i18n="work.category.business">Business Tools</span>
-                        </footer>
-                    </article>
-                </div>
-
-                <div class="projects-divider">
-                    <span class="divider-text" data-i18n="work.other">Other Work</span>
-                </div>
-
-                <div class="projects-secondary">
-                    <article class="project-secondary">
-                        <header class="project-secondary-header">
-                            <h3 class="project-secondary-title">LexaForms</h3>
-                            <span class="project-secondary-status" data-i18n="work.status.paused">Paused</span>
-                        </header>
-                        <p class="project-secondary-description" data-i18n="work.projects.lexaforms.description">Legal document generation through structured forms (using AI). Input simple answers, output properly formatted contracts and agreements.</p>
-                    </article>
-
-                    <article class="project-secondary">
-                        <header class="project-secondary-header">
-                            <h3 class="project-secondary-title">ManoStock</h3>
-                            <span class="project-secondary-status" data-i18n="work.status.paused">Paused</span>
-                        </header>
-                        <p class="project-secondary-description" data-i18n="work.projects.manostock.description">Inventory and billing system for small businesses. Tracks stock, sales, expenses, and generates invoices.</p>
-                    </article>
-
-                    <article class="project-secondary">
-                        <header class="project-secondary-header">
-                            <h3 class="project-secondary-title">MANYO</h3>
-                            <span class="project-secondary-status" data-i18n="work.status.paused">Paused</span>
-                        </header>
-                        <p class="project-secondary-description" data-i18n="work.projects.manyo.description">Social platform experiment combining video content, stories, and marketplace features. Built to understand complex multi-module architecture.</p>
-                    </article>
-                </div>
-                
-                <!-- INLINE CTA -->
-                <div class="cta-inline">
-                    <p data-i18n="work.cta.text">Working on a system that needs to run 24/7?</p>
-                    <a href="#contact" class="cta-link">
-                        <span data-i18n="work.cta.link">Let's discuss your project</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION - REDESIGNED -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-content">
-                        <div class="contact-eyebrow" data-i18n="contact.eyebrow">Let's Work Together</div>
-                        <h2 class="contact-headline" data-i18n="contact.headline">Building something that needs to work reliably?</h2>
-                        <p class="contact-description" data-i18n="contact.description">I'm currently available for full-stack web development, system design, and production-ready projects. If you're building something that needs to work reliably in the real world, let's talk.</p>
-                        
-                        <div class="contact-fit">
-                            <div class="fit-title" data-i18n="contact.fit.title">Best fit for:</div>
-                            <ul class="fit-list">
-                                <li data-i18n="contact.fit.item1">Production web applications</li>
-                                <li data-i18n="contact.fit.item2">Internal and customer-facing platforms</li>
-                                <li data-i18n="contact.fit.item3">Notification-driven systems (SMS, email)</li>
-                                <li data-i18n="contact.fit.item4">Django-based full-stack projects</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-action">
-                        <div class="contact-card">
-                            <div class="contact-primary">
-                                <div class="contact-method-label" data-i18n="contact.primary.label">Primary Contact</div>
-                                <a href="mailto:mansouryasser002@gmail.com" class="contact-cta">
-                                    mansouryasser@gmail
-                                    <svg class="cta-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    </svg>
-                                </a>
-                            </div>
-                            
-                            <div class="contact-divider"></div>
-                            
-                            <div class="contact-secondary">
-                                <div class="contact-method">
-                                    <span class="method-label" data-i18n="contact.work.label">Work Email</span>
-                                    <a href="mailto:yasser@absencescolaire.com" class="method-link">yasser@absencescolaire.com</a>
-                                </div>
-                                <div class="contact-method">
-                                    <span class="method-label" data-i18n="contact.phone.label">Phone</span>
-                                    <a href="tel:+212647955576" class="method-link">+212 647 955 576</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-note">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1"/>
-                                    <path d="M8 11V8M8 5.5V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                                <span data-i18n="contact.note">Typically respond within 12 hours</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-copyright">
-                    <span data-i18n="footer.copyright">© 2026 Yasser Mansour</span>
-                </div>
-                <div class="footer-links">
-                    <a href="https://www.instagram.com/yasser._mansour" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
-                </div>
-            </div>
+        <div class="hero__actions fade-up">
+          <a href="#projects" class="btn btn--gold">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost">Contact Me</a>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="hero__stats fade-up">
+          <div class="stat-item">
+            <span class="stat-num"><span class="counter" data-target="5">0</span>+</span>
+            <span class="stat-label">Products Built</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num"><span class="counter" data-target="5">0</span></span>
+            <span class="stat-label">Years Coding</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num"><span class="counter" data-target="18">0</span></span>
+            <span class="stat-label">Years Old</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHOTO COLUMN -->
+      <div class="hero__photo-col fade-up">
+        <div class="hero__photo-frame">
+          <div class="photo-ring photo-ring--outer"></div>
+          <div class="photo-ring photo-ring--inner"></div>
+          <img src="profile.jpg" alt="Yasser Mansour — Full-Stack Developer" class="hero__photo" loading="eager" />
+          <div class="photo-tag">
+            <span class="photo-tag-dot"></span>
+            <span>Available for Work</span>
+          </div>
+        </div>
+
+        <div class="floating-badge floating-badge--left">
+          <span>⚡</span>
+          <span>Full-Stack</span>
+        </div>
+        <div class="floating-badge floating-badge--right">
+          <span>🧠</span>
+          <span>AI-Powered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll fade-up">
+      <span>Scroll</span>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ ABOUT ═════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-rule"></span>
+        <span>About</span>
+      </div>
+
+      <div class="about__layout">
+        <div class="about__left">
+          <h2 class="section-title reveal">
+            Building software<br />
+            that actually <em>matters.</em>
+          </h2>
+        </div>
+        <div class="about__right">
+          <p class="about__para reveal">
+            I'm Yasser — a self-taught full-stack developer and founder based in
+            <strong>El Jadida, Morocco</strong>. I wrote my first lines of code at 13,
+            and five years later I've designed, built, and deployed complete production
+            systems used by real people.
+          </p>
+          <p class="about__para reveal">
+            I don't just write code — I build products. From the initial concept and
+            database schema to the UI, backend logic, and live deployment, every step
+            is mine. I specialise in SaaS platforms, AI-integrated tools, and
+            business software that solve genuine problems.
+          </p>
+          <p class="about__para reveal">
+            At 18 I've already founded and shipped multiple platforms independently,
+            handling every layer of the stack. My goal is simple:
+            <em>build software that creates real impact.</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="about__cards">
+        <div class="about-card reveal">
+          <span class="about-card__num">01</span>
+          <span class="about-card__icon">⚡</span>
+          <h3 class="about-card__title">Full-Stack</h3>
+          <p class="about-card__desc">Frontend to backend, database to deployment — I own the entire stack.</p>
+        </div>
+        <div class="about-card reveal">
+          <span class="about-card__num">02</span>
+          <span class="about-card__icon">🧠</span>
+          <h3 class="about-card__title">Product Thinking</h3>
+          <p class="about-card__desc">I design systems that solve real problems, not just ship features.</p>
+        </div>
+        <div class="about-card reveal">
+          <span class="about-card__num">03</span>
+          <span class="about-card__icon">🚀</span>
+          <h3 class="about-card__title">Self-Taught</h3>
+          <p class="about-card__desc">No bootcamp. No degree. Just relentless building since age 13.</p>
+        </div>
+        <div class="about-card reveal">
+          <span class="about-card__num">04</span>
+          <span class="about-card__icon">🌍</span>
+          <h3 class="about-card__title">Global Mindset</h3>
+          <p class="about-card__desc">Building from Morocco, with a vision that extends far beyond borders.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════ PROJECTS ════════════════════ -->
+  <section class="projects" id="projects">
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-rule"></span>
+        <span>Projects</span>
+      </div>
+
+      <div class="projects__header">
+        <h2 class="section-title reveal">
+          Real systems.<br />
+          <span class="text-outline">Real impact.</span>
+        </h2>
+        <p class="section-sub reveal">
+          Every project below is a fully built, production-grade platform — not a tutorial clone.
+        </p>
+      </div>
+
+      <div class="projects__grid">
+
+        <!-- 01 SUIVEDU -->
+        <article class="proj-card proj-card--featured reveal">
+          <div class="proj-card__shell">
+            <header class="proj-card__header">
+              <span class="proj-num">01</span>
+              <span class="proj-badge proj-badge--feat">Featured</span>
+            </header>
+            <div class="proj-card__visual">
+              <div class="vis-dash">
+                <div class="vis-bar" style="--h:70%"></div>
+                <div class="vis-bar" style="--h:90%"></div>
+                <div class="vis-bar" style="--h:55%"></div>
+                <div class="vis-bar" style="--h:80%"></div>
+                <div class="vis-line"></div>
+                <div class="vis-dot"></div>
+              </div>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__name">SuivEdu</h3>
+              <p class="proj-card__desc">
+                A comprehensive school management platform that digitises attendance tracking
+                and instantly notifies parents of absences via automated SMS alerts. Includes
+                teacher, student &amp; parent dashboards, admin panels, and real-time reporting.
+              </p>
+              <div class="proj-card__footer">
+                <span class="proj-role">Full Creator</span>
+                <div class="proj-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+            <div class="proj-card__glow"></div>
+          </div>
+        </article>
+
+        <!-- 02 LTERRAZI -->
+        <article class="proj-card reveal">
+          <div class="proj-card__shell">
+            <header class="proj-card__header">
+              <span class="proj-num">02</span>
+            </header>
+            <div class="proj-card__visual">
+              <div class="vis-dash">
+                <div class="vis-line"></div>
+                <div class="vis-line" style="width:70%;margin-top:10px"></div>
+                <div class="vis-line" style="width:55%;margin-top:10px"></div>
+                <div class="vis-msg"></div>
+                <div class="vis-msg vis-msg--2"></div>
+              </div>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__name">LTErrazi</h3>
+              <p class="proj-card__desc">
+                A complete digital platform built for a high school — featuring internal
+                messaging, official announcements, student accounts, and an administrative
+                backend for staff.
+              </p>
+              <div class="proj-card__footer">
+                <span class="proj-role">Full Creator</span>
+                <div class="proj-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+            <div class="proj-card__glow"></div>
+          </div>
+        </article>
+
+        <!-- 03 MANYO -->
+        <article class="proj-card reveal">
+          <div class="proj-card__shell">
+            <header class="proj-card__header">
+              <span class="proj-num">03</span>
+            </header>
+            <div class="proj-card__visual">
+              <div class="vis-dash vis-dash--social">
+                <div class="vis-avatar"></div>
+                <div class="vis-feed-line"></div>
+                <div class="vis-feed-line" style="width:60%"></div>
+                <div class="vis-feed-line" style="width:80%"></div>
+                <div class="vis-feed-line" style="width:45%"></div>
+              </div>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__name">MANYO</h3>
+              <p class="proj-card__desc">
+                A full-featured social media platform with posts, video feeds, and a
+                built-in marketplace — engineered and launched entirely by one person.
+              </p>
+              <div class="proj-card__footer">
+                <span class="proj-role">Full Creator</span>
+                <div class="proj-tags">
+                  <span class="tag">Full-Stack</span>
+                  <span class="tag">Social Platform</span>
+                  <span class="tag">Marketplace</span>
+                </div>
+              </div>
+            </div>
+            <div class="proj-card__glow"></div>
+          </div>
+        </article>
+
+        <!-- 04 MANOSTOCK -->
+        <article class="proj-card reveal">
+          <div class="proj-card__shell">
+            <header class="proj-card__header">
+              <span class="proj-num">04</span>
+            </header>
+            <div class="proj-card__visual">
+              <div class="vis-dash">
+                <div class="vis-bar" style="--h:60%"></div>
+                <div class="vis-bar" style="--h:85%"></div>
+                <div class="vis-bar" style="--h:50%"></div>
+                <div class="vis-bar" style="--h:75%"></div>
+              </div>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__name">ManoStock</h3>
+              <p class="proj-card__desc">
+                A business management SaaS covering inventory management, invoice generation,
+                and expense tracking — built for real SME workflows.
+              </p>
+              <div class="proj-card__footer">
+                <span class="proj-role">Full Creator</span>
+                <div class="proj-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">SaaS</span>
+                </div>
+              </div>
+            </div>
+            <div class="proj-card__glow"></div>
+          </div>
+        </article>
+
+        <!-- 05 AI LEGAL -->
+        <article class="proj-card proj-card--ai reveal">
+          <div class="proj-card__shell">
+            <header class="proj-card__header">
+              <span class="proj-num">05</span>
+              <span class="proj-badge proj-badge--ai">AI Powered</span>
+            </header>
+            <div class="proj-card__visual proj-card__visual--ai">
+              <div class="ai-ring ai-ring--1"></div>
+              <div class="ai-ring ai-ring--2"></div>
+              <div class="ai-core">🤖</div>
+              <div class="ai-sparks">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__name">AI Legal Document Generator</h3>
+              <p class="proj-card__desc">
+                An intelligent platform leveraging large language models to generate
+                professional legal documents on demand — drastically reducing the time
+                and cost of legal document preparation.
+              </p>
+              <div class="proj-card__footer">
+                <span class="proj-role">Full Creator</span>
+                <div class="proj-tags">
+                  <span class="tag">AI / LLM</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">Legal Tech</span>
+                </div>
+              </div>
+            </div>
+            <div class="proj-card__glow proj-card__glow--ai"></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SKILLS ════════════════════ -->
+  <section class="skills" id="skills">
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-rule"></span>
+        <span>Skills</span>
+      </div>
+
+      <h2 class="section-title reveal">
+        The full stack,<br />
+        <span class="text-outline">end-to-end.</span>
+      </h2>
+
+      <div class="skills__layout">
+
+        <div class="skills__cats">
+          <div class="skill-group reveal">
+            <div class="skill-group__head">
+              <span class="skill-group__marker"></span>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-group__pills">
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">UI Animation</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group__head">
+              <span class="skill-group__marker"></span>
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-group__pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Django</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group__head">
+              <span class="skill-group__marker"></span>
+              <h3>Product &amp; Design</h3>
+            </div>
+            <div class="skill-group__pills">
+              <span class="skill-pill">UI / UX Design</span>
+              <span class="skill-pill">System Architecture</span>
+              <span class="skill-pill">Product Development</span>
+              <span class="skill-pill">Deployment</span>
+              <span class="skill-pill">AI Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__bars reveal">
+          <div class="skill-bar">
+            <div class="skill-bar__meta">
+              <span>Full-Stack Development</span>
+              <span class="skill-bar__pct">95%</span>
+            </div>
+            <div class="skill-bar__track">
+              <div class="skill-bar__fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__meta">
+              <span>Python / Django</span>
+              <span class="skill-bar__pct">90%</span>
+            </div>
+            <div class="skill-bar__track">
+              <div class="skill-bar__fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__meta">
+              <span>Product Architecture</span>
+              <span class="skill-bar__pct">88%</span>
+            </div>
+            <div class="skill-bar__track">
+              <div class="skill-bar__fill" data-width="88"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__meta">
+              <span>UI / UX Design</span>
+              <span class="skill-bar__pct">85%</span>
+            </div>
+            <div class="skill-bar__track">
+              <div class="skill-bar__fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__meta">
+              <span>AI Integration</span>
+              <span class="skill-bar__pct">80%</span>
+            </div>
+            <div class="skill-bar__track">
+              <div class="skill-bar__fill" data-width="80"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ 
+  <section class="journey" id="journey">
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-rule"></span>
+        <span>Journey</span>
+      </div>
+      <h2 class="section-title reveal">The path so far.</h2>
+
+      <div class="timeline">
+        <div class="timeline__spine"></div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2019</div>
+          <div class="tl-card">
+            <h3>First Line of Code</h3>
+            <p>Wrote my first program at age 13. Started with the fundamentals and never looked back — driven entirely by curiosity and the desire to build.</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2021</div>
+          <div class="tl-card">
+            <h3>First Real Project</h3>
+            <p>Built LTErrazi — a complete digital platform for my high school. Internal messaging, announcements, student accounts, and an administrative backend. Shipped to real users.</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2022</div>
+          <div class="tl-card">
+            <h3>Full-Stack Mastery</h3>
+            <p>Went deep on Python, Django, and PostgreSQL. Built MANYO — a full social media platform with video feeds and a marketplace, solo from concept to deployment.</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2023</div>
+          <div class="tl-card">
+            <h3>SaaS &amp; Business Software</h3>
+            <p>Launched ManoStock, a business management SaaS for SMEs. Expanded into enterprise-grade system design patterns and product architecture.</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-card">
+            <h3>AI Integration &amp; SuivEdu</h3>
+            <p>Built SuivEdu — a comprehensive school management platform with real-time attendance and automated SMS alerts. Integrated AI into a legal document generation platform.</p>
+          </div>
+        </div>
+
+        <div class="tl-item tl-item--now reveal">
+          <div class="tl-dot tl-dot--now"></div>
+          <div class="tl-year tl-year--now">Now</div>
+          <div class="tl-card tl-card--now">
+            <h3>Building the Future</h3>
+            <p>Open to ambitious collaborations, product partnerships, and high-impact engineering roles. 18 years old. 5+ shipped products. Infinite runway ahead.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+  <!-- ════════════════════ CONTACT ════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-rule"></span>
+        <span>Contact</span>
+      </div>
+
+      <div class="contact__header">
+        <h2 class="section-title reveal">
+          Let's build<br />
+          <span class="text-outline">something great.</span>
+        </h2>
+        <p class="section-sub reveal">Have a project, idea, or opportunity? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact__layout">
+
+        <div class="contact__info reveal">
+          <div class="contact__card">
+
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-10 7L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__label">Email</span>
+                <a href="mailto:yasser@absencescolaire.com" class="contact__val">yasser@absencescolaire.com</a>
+              </div>
+            </div>
+<div class="contact__item">
+  <div class="contact__icon">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+      19.79 19.79 0 0 1-8.63-3.07 
+      19.5 19.5 0 0 1-6-6 
+      19.79 19.79 0 0 1-3.07-8.67A2 
+      2 0 0 1 4.11 2h3a2 2 0 0 1 2 
+      1.72c.12.9.37 1.77.73 2.58a2 
+      2 0 0 1-.45 2.11L8.09 9.91a16 
+      16 0 0 0 6 6l1.5-1.3a2 2 0 0 
+      1 2.11-.45c.81.36 1.68.61 
+      2.58.73A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </div>
+  <div>
+    <span class="contact__label">Phone</span>
+    <a href="tel:+212647955576" class="contact__val">+212 6 47 95 55 76</a>
+  </div>
+</div>
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__label">Location</span>
+                <span class="contact__val">El Jadida, Morocco 🇲🇦</span>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__label">Response Time</span>
+                <span class="contact__val">Usually within 24 hours</span>
+              </div>
+            </div>
+
+            <div class="contact__divider"></div>
+
+            <div class="contact__langs">
+              <span class="contact__langs-label">Languages</span>
+              <div class="contact__lang-pills">
+                <span class="lang-pill">English</span>
+                <span class="lang-pill">Français</span>
+                <span class="lang-pill">العربية</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn--full">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Message sent! I'll be in touch soon.
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#home" class="footer__logo">YM<span class="logo-dot">.</span></a>
+        <p class="footer__copy">© 2026 Yasser Mansour. All rights reserved.</p>
+        <p class="footer__loc">El Jadida, Morocco 🇲🇦</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
