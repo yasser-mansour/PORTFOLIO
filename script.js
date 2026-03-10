@@ -1,503 +1,493 @@
-// ===========================
-// TRANSLATIONS DATA
-// ===========================
-const translations = {
-    en: {
-        nav: {
-            work: "Work",
-            contact: "Contact"
-        },
-        intro: {
-            eyebrow: "Full-Stack Web Developer",
-            headline: "I build production systems that schools and businesses use daily.",
-            proof: "I've shipped real-world systems used daily — including SMS infrastructure serving schools across Morocco and field data collection tools that replaced paper workflows...",
-            approach: "My approach: identify concrete problems, build reliable solutions, and refine them based on real usage. Reliability always comes first.",
-            meta: {
-                location: {
-                    label: "Based in",
-                    value: "El Jadida, Morocco"
-                },
-                stack: {
-                    label: "Primary Stack",
-                    value: "Django · Python · PostgreSQL · JavaScript · AWS S3"
-                },
-                focus: {
-                    label: "Current Focus",
-                    value: "Multi-tenant SaaS"
-                }
-            }
-        },
-        work: {
-            title: "Systems in Production",
-            subtitle: "Projects that are actively used",
-            status: {
-                active: "Active",
-                paused: "Paused"
-            },
-            projects: {
-                suivedu: {
-                    description: "School attendance and parent notification platform used by schools across Morocco. Built the SMS infrastructure that handles thousands of daily notifications—automated alerts for absences, schedule changes, administrative announcements.",
-                    metric: "Daily SMS"
-                },
-                lterrazi: {
-                    description: "Internal platform for a technical high school. Includes messaging, announcements, temporary discussion rooms, and a point system for student engagement. Built for daily internal communication."
-                },
-                alldoc: {
-                    description: "Digital forms for field technicians. Replaces paper-based reporting with mobile data collection."
-                },
-                lexaforms: {
-                    description: "Legal document generation through structured forms (using AI). Input simple answers, output properly formatted contracts and agreements."
-                },
-                manostock: {
-                    description: "Inventory and billing system for small businesses. Tracks stock, sales, expenses, and generates invoices."
-                },
-                manyo: {
-                    description: "Social platform experiment combining video content, stories, and marketplace features. Built to understand complex multi-module architecture."
-                }
-            },
-            tech: {
-                sms: "SMS Infrastructure",
-                multitenant: "Multi-tenant",
-                messaging: "Real-time Messaging",
-                rbac: "Role-based Access",
-                mobile: "Mobile-First"
-            },
-            category: {
-                education: "Education Technology",
-                internal: "Internal Systems",
-                business: "Business Tools"
-            },
-            other: "Other Work",
-            cta: {
-                text: "Working on a system that needs to run 24/7?",
-                link: "Let's discuss your project"
-            }
-        },
-        contact: {
-            eyebrow: "Let's Work Together",
-            headline: "Building something that needs to work reliably?",
-            description: "I'm currently available for full-stack web development, system design, and production-ready projects. If you're building something that needs to work reliably in the real world, let's talk.",
-            fit: {
-                title: "Best fit for:",
-                item1: "Production web applications",
-                item2: "Internal and customer-facing platforms",
-                item3: "Notification-driven systems (SMS, email)",
-                item4: "Django-based full-stack projects"
-            },
-            primary: {
-                label: "Primary Contact"
-            },
-            work: {
-                label: "Work Email"
-            },
-            phone: {
-                label: "Phone"
-            },
-            note: "Typically respond within 12 hours"
-        },
-        footer: {
-            copyright: "© 2026 Yasser Mansour"
-        }
-    },
-    fr: {
-        nav: {
-            work: "Travaux",
-            contact: "Contact"
-        },
-        intro: {
-            eyebrow: "Développeur Web Full-Stack",
-            headline: "Je crée des systèmes de production utilisés quotidiennement par les écoles et les entreprises.",
-            proof: "J'ai développé des systèmes réels utilisés quotidiennement — notamment une infrastructure SMS desservant les écoles à travers le Maroc et des outils de collecte de données sur le terrain qui ont remplacé les flux de travail papier...",
-            approach: "Mon approche : identifier des problèmes concrets, créer des solutions fiables et les affiner en fonction de l'utilisation réelle. La fiabilité passe toujours en premier.",
-            meta: {
-                location: {
-                    label: "Basé à",
-                    value: "El Jadida, Maroc"
-                },
-                stack: {
-                    label: "Stack Principal",
-                    value: "Django · Python · PostgreSQL · JavaScript · AWS S3"
-                },
-                focus: {
-                    label: "Focus Actuel",
-                    value: "SaaS Multi-tenant"
-                }
-            }
-        },
-        work: {
-            title: "Systèmes en Production",
-            subtitle: "Projets activement utilisés",
-            status: {
-                active: "Actif",
-                paused: "En Pause"
-            },
-            projects: {
-                suivedu: {
-                    description: "Plateforme de présence scolaire et de notification aux parents utilisée par les écoles à travers le Maroc. J'ai développé l'infrastructure SMS qui gère des milliers de notifications quotidiennes—alertes automatiques pour les absences, changements d'horaire, annonces administratives.",
-                    metric: "SMS Quotidiens"
-                },
-                lterrazi: {
-                    description: "Plateforme interne pour un lycée technique. Comprend la messagerie, les annonces, les salles de discussion temporaires et un système de points pour l'engagement des étudiants. Conçu pour la communication interne quotidienne."
-                },
-                alldoc: {
-                    description: "Formulaires numériques pour les techniciens de terrain. Remplace les rapports papier par la collecte de données mobile."
-                },
-                lexaforms: {
-                    description: "Génération de documents juridiques via des formulaires structurés (utilisant l'IA). Saisissez des réponses simples, obtenez des contrats et accords correctement formatés."
-                },
-                manostock: {
-                    description: "Système d'inventaire et de facturation pour petites entreprises. Suit le stock, les ventes, les dépenses et génère des factures."
-                },
-                manyo: {
-                    description: "Expérience de plateforme sociale combinant contenu vidéo, stories et fonctionnalités de marketplace. Développée pour comprendre l'architecture multi-modules complexe."
-                }
-            },
-            tech: {
-                sms: "Infrastructure SMS",
-                multitenant: "Multi-tenant",
-                messaging: "Messagerie en Temps Réel",
-                rbac: "Accès Basé sur les Rôles",
-                mobile: "Mobile-First"
-            },
-            category: {
-                education: "Technologie Éducative",
-                internal: "Systèmes Internes",
-                business: "Outils Professionnels"
-            },
-            other: "Autres Travaux",
-            cta: {
-                text: "Vous travaillez sur un système qui doit fonctionner 24/7 ?",
-                link: "Discutons de votre projet"
-            }
-        },
-        contact: {
-            eyebrow: "Travaillons Ensemble",
-            headline: "Vous construisez quelque chose qui doit fonctionner de manière fiable ?",
-            description: "Je suis actuellement disponible pour le développement web full-stack, la conception de systèmes et les projets prêts pour la production. Si vous construisez quelque chose qui doit fonctionner de manière fiable dans le monde réel, parlons-en.",
-            fit: {
-                title: "Idéal pour :",
-                item1: "Applications web de production",
-                item2: "Plateformes internes et orientées client",
-                item3: "Systèmes basés sur les notifications (SMS, email)",
-                item4: "Projets full-stack basés sur Django"
-            },
-            primary: {
-                label: "Contact Principal"
-            },
-            work: {
-                label: "Email Professionnel"
-            },
-            phone: {
-                label: "Téléphone"
-            },
-            note: "Réponse typique sous 12 heures"
-        },
-        footer: {
-            copyright: "© 2026 Yasser Mansour"
-        }
-    },
-    ar: {
-        nav: {
-            work: "الأعمال",
-            contact: "تواصل"
-        },
-        intro: {
-            eyebrow: "مطور ويب متكامل",
-            headline: "أقوم ببناء أنظمة إنتاج تستخدمها المدارس والشركات يومياً.",
-            proof: "قمت بتطوير أنظمة واقعية تُستخدم يومياً — بما في ذلك بنية تحتية للرسائل القصيرة تخدم المدارس في جميع أنحاء المغرب وأدوات جمع البيانات الميدانية التي حلت محل سير العمل الورقي...",
-            approach: "منهجيتي: تحديد المشاكل الملموسة، بناء حلول موثوقة، وتحسينها بناءً على الاستخدام الفعلي. الموثوقية تأتي دائماً أولاً.",
-            meta: {
-                location: {
-                    label: "مقيم في",
-                    value: "الجديدة، المغرب"
-                },
-                stack: {
-                    label: "التقنيات الأساسية",
-                    value: "Django · Python · PostgreSQL · JavaScript · AWS S3"
-                },
-                focus: {
-                    label: "التركيز الحالي",
-                    value: "SaaS متعدد المستأجرين"
-                }
-            }
-        },
-        work: {
-            title: "أنظمة قيد الإنتاج",
-            subtitle: "مشاريع يتم استخدامها بنشاط",
-            status: {
-                active: "نشط",
-                paused: "متوقف مؤقتاً"
-            },
-            projects: {
-                suivedu: {
-                    description: "منصة حضور مدرسي وإشعارات لأولياء الأمور تستخدمها المدارس في جميع أنحاء المغرب. قمت ببناء البنية التحتية للرسائل القصيرة التي تتعامل مع آلاف الإشعارات اليومية—تنبيهات تلقائية للغياب، تغييرات الجدول الزمني، الإعلانات الإدارية.",
-                    metric: "رسائل قصيرة يومية"
-                },
-                lterrazi: {
-                    description: "منصة داخلية لمدرسة ثانوية تقنية. تشمل المراسلة، الإعلانات، غرف النقاش المؤقتة، ونظام نقاط لمشاركة الطلاب. بُنيت للتواصل الداخلي اليومي."
-                },
-                alldoc: {
-                    description: "نماذج رقمية للفنيين الميدانيين. تحل محل التقارير الورقية بجمع البيانات عبر الهاتف المحمول."
-                },
-                lexaforms: {
-                    description: "توليد المستندات القانونية من خلال نماذج منظمة (باستخدام الذكاء الاصطناعي). أدخل إجابات بسيطة، احصل على عقود واتفاقيات منسقة بشكل صحيح."
-                },
-                manostock: {
-                    description: "نظام جرد وفوترة للشركات الصغيرة. يتتبع المخزون، المبيعات، المصروفات، ويولد الفواتير."
-                },
-                manyo: {
-                    description: "تجربة منصة اجتماعية تجمع محتوى الفيديو، القصص، وميزات السوق. بُنيت لفهم البنية المعمارية المعقدة متعددة الوحدات."
-                }
-            },
-            tech: {
-                sms: "بنية تحتية للرسائل القصيرة",
-                multitenant: "متعدد المستأجرين",
-                messaging: "مراسلة فورية",
-                rbac: "وصول قائم على الأدوار",
-                mobile: "محمول أولاً"
-            },
-            category: {
-                education: "تكنولوجيا التعليم",
-                internal: "أنظمة داخلية",
-                business: "أدوات الأعمال"
-            },
-            other: "أعمال أخرى",
-            cta: {
-                text: "تعمل على نظام يحتاج للعمل على مدار الساعة؟",
-                link: "لنناقش مشروعك"
-            }
-        },
-        contact: {
-            eyebrow: "لنعمل معاً",
-            headline: "تبني شيئاً يحتاج للعمل بشكل موثوق؟",
-            description: "أنا متاح حالياً لتطوير الويب المتكامل، تصميم الأنظمة، والمشاريع الجاهزة للإنتاج. إذا كنت تبني شيئاً يحتاج للعمل بشكل موثوق في العالم الحقيقي، فلنتحدث.",
-            fit: {
-                title: "الأنسب لـ:",
-                item1: "تطبيقات ويب إنتاجية",
-                item2: "منصات داخلية وموجهة للعملاء",
-                item3: "أنظمة قائمة على الإشعارات (SMS، البريد الإلكتروني)",
-                item4: "مشاريع متكاملة قائمة على Django"
-            },
-            primary: {
-                label: "جهة الاتصال الرئيسية"
-            },
-            work: {
-                label: "البريد الإلكتروني للعمل"
-            },
-            phone: {
-                label: "الهاتف"
-            },
-            note: "عادة أرد خلال 12 ساعة"
-        },
-        footer: {
-            copyright: "© 2026 ياسر منصور"
-        }
-    }
-};
+/* ═══════════════════════════════════════════════════════════════════════
+   SCRIPT.JS — Yasser Mansour Portfolio
+   Clean, modular vanilla JavaScript
+   ═══════════════════════════════════════════════════════════════════════ */
 
-// ===========================
-// PORTFOLIO CLASS
-// ===========================
-class Portfolio {
-    constructor() {
-        this.nav = document.getElementById('nav');
-        this.navToggle = document.getElementById('navToggle');
-        this.navControls = document.querySelector('.nav-controls');
-        this.navLinkElements = document.querySelectorAll('.nav-link');
-        this.currentLang = 'en';
-        
-        this.init();
-    }
-    
-    init() {
-        this.setupMobileMenu();
-        this.setupSmoothScroll();
-        this.setupNavBackground();
-        this.setupLanguageSwitcher();
-        this.setupThemeToggle();
-    }
-    
-    // ===========================
-    // MOBILE MENU
-    // ===========================
-    setupMobileMenu() {
-        this.navToggle.addEventListener('click', () => {
-            this.toggleMobileMenu();
+(function () {
+  'use strict';
+
+  /* ────────────────────────────────────────────────────────────────────
+     UTILITY HELPERS
+  ──────────────────────────────────────────────────────────────────── */
+
+  /**
+   * Run callback after DOM is ready.
+   */
+  function onReady(fn) {
+    if (document.readyState !== 'loading') { fn(); }
+    else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+
+  /**
+   * Throttle a function to run at most once per animation frame.
+   * Returns a wrapper that can safely be attached to scroll events.
+   */
+  function rafThrottle(fn) {
+    let ticking = false;
+    return function (...args) {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          fn.apply(this, args);
+          ticking = false;
         });
-        
-        this.navLinkElements.forEach(link => {
-            link.addEventListener('click', () => {
-                this.closeMobileMenu();
-            });
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!this.nav.contains(e.target) && this.navControls.classList.contains('active')) {
-                this.closeMobileMenu();
-            }
-        });
-    }
-    
-    toggleMobileMenu() {
-        this.navToggle.classList.toggle('active');
-        this.navControls.classList.toggle('active');
-        document.body.style.overflow = this.navControls.classList.contains('active') ? 'hidden' : '';
-    }
-    
-    closeMobileMenu() {
-        this.navToggle.classList.remove('active');
-        this.navControls.classList.remove('active');
+        ticking = true;
+      }
+    };
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     NAVIGATION — sticky scroll state + mobile burger
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initNav() {
+    const nav      = document.getElementById('nav');
+    const burger   = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (!nav || !burger || !navLinks) return;
+
+    // Scroll → add .scrolled class for glassy background
+    const handleScroll = rafThrottle(() => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // run once on init
+
+    // Mobile burger toggle
+    burger.addEventListener('click', () => {
+      const isOpen = burger.classList.toggle('open');
+      navLinks.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navLinks.classList.remove('open');
         document.body.style.overflow = '';
-    }
-    
-    // ===========================
-    // SMOOTH SCROLL
-    // ===========================
-    setupSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const targetId = anchor.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    this.scrollToElement(targetElement);
-                }
-            });
-        });
-    }
-    
-    scrollToElement(element) {
-        const headerHeight = this.nav.offsetHeight;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerHeight - 20;
-        
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
-    
-    // ===========================
-    // NAV BACKGROUND
-    // ===========================
-    setupNavBackground() {
-        let lastScrollTop = 0;
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 50) {
-                this.nav.style.backgroundColor = 'var(--nav-bg-scrolled)';
-                this.nav.style.backdropFilter = 'blur(10px)';
-            } else {
-                this.nav.style.backgroundColor = 'var(--nav-bg)';
-            }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        }, { passive: true });
-    }
-    
-    // ===========================
-    // LANGUAGE SWITCHER
-    // ===========================
-    setupLanguageSwitcher() {
-        // Load saved language preference or default to English
-        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-        this.setLanguage(savedLang);
-        
-        // Add click handlers to language buttons
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.dataset.lang;
-                this.setLanguage(lang);
-            });
-        });
-    }
-    
-    setLanguage(lang) {
-        // Validate language
-        if (!translations[lang]) {
-            console.warn(`Language ${lang} not found, defaulting to English`);
-            lang = 'en';
-        }
-        
-        this.currentLang = lang;
-        
-        // Update HTML attributes
-        document.documentElement.lang = lang;
-        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        
-        // Update active button
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        
-        // Update all translatable elements
-        this.updateTranslations(lang);
-        
-        // Save preference
-        localStorage.setItem('preferredLanguage', lang);
-    }
-    
-    updateTranslations(lang) {
-        const data = translations[lang];
-        
-        // Update all elements with data-i18n attribute
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.dataset.i18n;
-            const translation = this.getNestedTranslation(data, key);
-            
-            if (translation) {
-                element.textContent = translation;
-            }
-        });
-    }
-    
-    getNestedTranslation(obj, path) {
-        return path.split('.').reduce((current, key) => current?.[key], obj);
-    }
-    
-    // ===========================
-    // THEME TOGGLE
-    // ===========================
-    setupThemeToggle() {
-        const themeToggle = document.getElementById('themeToggle');
-        
-        // Check for saved theme preference or default to system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-        
-        this.setTheme(initialTheme);
-        
-        // Add click handler
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.dataset.theme || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            this.setTheme(newTheme);
-        });
-        
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                this.setTheme(e.matches ? 'dark' : 'light');
-            }
-        });
-    }
-    
-    setTheme(theme) {
-        document.documentElement.dataset.theme = theme;
-        localStorage.setItem('theme', theme);
-    }
-}
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
 
-// ===========================
-// INITIALIZE
-// ===========================
-document.addEventListener('DOMContentLoaded', () => {
-    new Portfolio();
-});
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && burger.classList.contains('open')) {
+        burger.classList.remove('open');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     ACTIVE NAV LINK — highlight based on scroll position
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const links    = document.querySelectorAll('.nav__link');
+
+    if (!sections.length || !links.length) return;
+
+    const update = rafThrottle(() => {
+      const scrollY = window.scrollY + 120;
+
+      let current = '';
+      sections.forEach(section => {
+        if (scrollY >= section.offsetTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${current}`
+        );
+      });
+    });
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     HERO — staggered fade-up entrance
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initHeroAnimation() {
+    const elements = document.querySelectorAll('.fade-up');
+    if (!elements.length) return;
+
+    // Small delay so browser has rendered the page
+    setTimeout(() => {
+      elements.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('in');
+        }, i * 120);
+      });
+    }, 80);
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     REVEAL ON SCROLL — IntersectionObserver for .reveal elements
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        // Stagger siblings within the same parent for a cascading effect
+        const siblings = Array.from(
+          entry.target.parentElement.querySelectorAll('.reveal:not(.visible)')
+        );
+        const idx = siblings.indexOf(entry.target);
+        const delay = Math.max(0, idx) * 90;
+
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold:   0.08,
+      rootMargin: '0px 0px -48px 0px',
+    });
+
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     SKILL BARS — animated fill on scroll-into-view
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initSkillBars() {
+    const bars = document.querySelectorAll('.skill-bar__fill');
+    if (!bars.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const target = entry.target;
+        const width  = target.getAttribute('data-width');
+
+        // Slight delay for visual delight
+        setTimeout(() => {
+          target.style.width = `${width}%`;
+        }, 250);
+
+        observer.unobserve(target);
+      });
+    }, { threshold: 0.2 });
+
+    bars.forEach(bar => observer.observe(bar));
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     COUNTER ANIMATION — numeric stats in hero
+  ──────────────────────────────────────────────────────────────────── */
+
+  function animateCounter(el) {
+    const target   = parseInt(el.getAttribute('data-target'), 10);
+    const duration = 1400;
+    const start    = performance.now();
+
+    function step(now) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out-cubic
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     TIMELINE DOT — activate dot when card becomes visible
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initTimeline() {
+    const items = document.querySelectorAll('.tl-item');
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => observer.observe(item));
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     SMOOTH SCROLL — override default anchor behaviour
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const navHeight = parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
+          10
+        ) || 72;
+
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     CUSTOM CURSOR — smooth magnetic follower
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initCursor() {
+    const cursor   = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
+
+    // Only on pointer-capable (non-touch) devices
+    if (!cursor || !follower) return;
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      cursor.style.display   = 'none';
+      follower.style.display = 'none';
+      return;
+    }
+
+    let mouseX = 0, mouseY = 0;
+    let followX = 0, followY = 0;
+    let isVisible = false;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top  = `${mouseY}px`;
+
+      if (!isVisible) {
+        cursor.style.opacity   = '1';
+        follower.style.opacity = '1';
+        isVisible = true;
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity   = '0';
+      follower.style.opacity = '0';
+      isVisible = false;
+    });
+
+    // Scale cursor on interactive elements
+    const interactive = 'a, button, input, textarea, [role="button"]';
+    document.querySelectorAll(interactive).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform   = 'translate(-50%, -50%) scale(1.6)';
+        follower.style.transform = 'translate(-50%, -50%) scale(1.3)';
+        follower.style.borderColor = 'var(--gold)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform   = 'translate(-50%, -50%) scale(1)';
+        follower.style.transform = 'translate(-50%, -50%) scale(1)';
+        follower.style.borderColor = '';
+      });
+    });
+
+    // Smooth follower loop
+    function animateFollower() {
+      // Lerp toward cursor
+      followX += (mouseX - followX) * 0.1;
+      followY += (mouseY - followY) * 0.1;
+
+      follower.style.left = `${followX}px`;
+      follower.style.top  = `${followY}px`;
+
+      requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     PARALLAX ORBS — subtle scroll parallax on hero orbs
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initParallaxOrbs() {
+    const orbs = document.querySelectorAll('.orb');
+    if (!orbs.length) return;
+
+    const handleScroll = rafThrottle(() => {
+      const y = window.scrollY;
+      orbs.forEach((orb, i) => {
+        const speed  = 0.06 + i * 0.035;
+        const offset = y * speed;
+        orb.style.transform = `translateY(${offset}px)`;
+      });
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     PROJECT CARD HOVER — subtle cursor-tracked glow tilt
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initCardTilt() {
+    const cards = document.querySelectorAll('.proj-card');
+    if (!cards.length) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    cards.forEach(card => {
+      const shell = card.querySelector('.proj-card__shell');
+      if (!shell) return;
+
+      card.addEventListener('mousemove', (e) => {
+        const rect   = card.getBoundingClientRect();
+        const x      = (e.clientX - rect.left) / rect.width  - 0.5; // –0.5 → 0.5
+        const y      = (e.clientY - rect.top)  / rect.height - 0.5;
+        const tiltX  = y * 5;   // degrees
+        const tiltY  = -x * 5;
+
+        shell.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.01)`;
+        shell.style.transition = 'transform 0.08s linear';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        shell.style.transform  = '';
+        shell.style.transition = 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)';
+      });
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     CONTACT FORM — validation + success feedback
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initContactForm() {
+    const form    = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    if (!form || !success) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const btn          = form.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+
+      // Loading state
+      btn.innerHTML  = 'Sending…';
+      btn.disabled   = true;
+      btn.style.opacity = '0.7';
+
+      // Simulate async send (replace with real fetch in production)
+      setTimeout(() => {
+        form.reset();
+
+        // Restore button
+        btn.innerHTML = originalHTML;
+        btn.disabled  = false;
+        btn.style.opacity = '';
+
+        // Show success message
+        success.classList.add('show');
+
+        // Auto-hide after 5 s
+        setTimeout(() => {
+          success.classList.remove('show');
+        }, 5000);
+      }, 1300);
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     ABOUT CARD — stagger children on reveal
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initAboutCards() {
+    const cards = document.querySelectorAll('.about-card');
+    if (!cards.length) return;
+
+    cards.forEach((card, i) => {
+      card.style.transitionDelay = `${i * 80}ms`;
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     PROJECT TAGS — hover colour shift
+  ──────────────────────────────────────────────────────────────────── */
+
+  function initTagHovers() {
+    document.querySelectorAll('.proj-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.querySelectorAll('.tag').forEach(tag => {
+          tag.style.borderColor = 'rgba(201,168,76,0.3)';
+          tag.style.color       = 'var(--text-primary)';
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        card.querySelectorAll('.tag').forEach(tag => {
+          tag.style.borderColor = '';
+          tag.style.color       = '';
+        });
+      });
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────────────
+     INIT — run all modules
+  ──────────────────────────────────────────────────────────────────── */
+
+  onReady(() => {
+    initNav();
+    initActiveNav();
+    initHeroAnimation();
+    initReveal();
+    initSkillBars();
+    initCounters();
+    initTimeline();
+    initSmoothScroll();
+    initCursor();
+    initParallaxOrbs();
+    initCardTilt();
+    initContactForm();
+    initAboutCards();
+    initTagHovers();
+  });
+
+})();
+
