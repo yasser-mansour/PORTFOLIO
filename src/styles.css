@@ -589,6 +589,17 @@ a:hover {
   }
 }
 
+.aside {
+  max-width: var(--measure);
+  margin-top: var(--space-6);
+  color: var(--ink-2);
+}
+
+.gallery {
+  display: grid;
+  gap: var(--space-7);
+}
+
 .contact-lead {
   color: var(--ink-2);
 }

@@ -43,7 +43,7 @@ export function home() {
       jobTitle: 'Developer',
       affiliation: { '@type': 'CollegeOrUniversity', name: 'ENSAM Meknès' },
       knowsLanguage: site.languages,
-      sameAs: [site.github.url],
+      sameAs: [site.github.url, site.linkedin],
     },
     body: html`
       <section class="intro wrap" aria-labelledby="intro-name">
@@ -78,6 +78,7 @@ export function home() {
               </li>`,
           )}
         </ul>
+        <p class="aside">Much of my work isn’t listed here: I also build software on request for people and organisations, and that work stays private.</p>
       </section>
 
       <section class="section wrap" id="contact" aria-labelledby="contact-title">
@@ -92,6 +93,7 @@ export function home() {
           ${facts([
             ['Phone', html`<a href="${site.phone.href}">${site.phone.display}</a>`],
             ['GitHub', html`<a href="${site.github.url}">${site.github.handle}</a>`],
+            ['LinkedIn', html`<a href="${site.linkedin}">Yasser Mansour</a>`],
             ['Languages', site.languages.join(', ')],
           ])}
         </div>

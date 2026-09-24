@@ -29,6 +29,7 @@ function footer() {
       <ul class="footer-links">
         <li><a href="mailto:${site.email}">Email</a></li>
         <li><a href="${site.github.url}">GitHub</a></li>
+        <li><a href="${site.linkedin}">LinkedIn</a></li>
         <li><a href="/about/#colophon">Colophon</a></li>
       </ul>
     </footer>`;

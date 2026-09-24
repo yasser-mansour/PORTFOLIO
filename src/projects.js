@@ -1,7 +1,8 @@
 // Every project on the site, in display order.
 //
 // Featured projects get a section on the home page and a case study at
-// /work/<slug>/; "showcase" also puts their screenshot on the home page.
+// /work/<slug>/; "showcase" also puts their screenshot on the home page,
+// and "gallery" adds more screenshots to the case study.
 // The rest are listed compactly under "Earlier".
 //
 // Fields are optional unless used by every project (slug, name, kind,
@@ -9,10 +10,82 @@
 
 export const projects = [
   {
+    slug: 'suivedu',
+    name: 'SuivEdu',
+    featured: true,
+    showcase: true,
+    kind: 'School attendance',
+    platform: 'Web app, installable as a PWA',
+    summary:
+      'Attendance tracking for schools. Teachers take the register, and parents hear about an absence by SMS or email instead of at the end of the term.',
+    detail:
+      'One school group can run several schools. Every view that takes a school, class, user or bill id goes through the same small set of permission decorators, so tenant isolation is checked in one place instead of in each view.',
+    role: 'Design, backend, frontend, deployment',
+    status: { label: 'Live', live: true },
+    links: [{ label: 'suivedu.com', href: 'https://www.suivedu.com' }],
+    stack: ['Django', 'PostgreSQL', 'Celery', 'Redis', 'Tailwind CSS', 'Alpine.js', 'ReportLab'],
+    image: {
+      src: '/images/suivedu.webp',
+      width: 1600,
+      height: 1000,
+      alt: 'The SuivEdu dashboard in French: seven class absences today, seven waiting to be notified, and shortcuts to attendance, statistics and weekly PDF reports.',
+      caption: 'The school dashboard. Running locally with sample data.',
+    },
+    gallery: [
+      {
+        src: '/images/suivedu-week.webp',
+        width: 1600,
+        height: 1000,
+        alt: 'A weekly grid of absences for one class, by day and by morning and afternoon session.',
+        caption: 'One class’s week, session by session.',
+      },
+      {
+        src: '/images/suivedu-signin.webp',
+        width: 1600,
+        height: 1000,
+        alt: 'The SuivEdu sign-in page in Arabic, with a French language switch.',
+        caption: 'The live sign-in page. The interface is available in Arabic and French.',
+      },
+    ],
+    overview: `
+      <p>SuivEdu digitises the attendance register. Teachers mark who is missing, the school sees it the same day, and parents are notified automatically. Around that core sit the things a school actually asks for once it relies on the register: class and student management, custom messages to parents, statistics, printable weekly reports and billing.</p>
+      <p>It is built for school groups rather than single schools. A head administrator sees every school in the group; administrators, teachers and students see only their own.</p>
+    `,
+    notes: [
+      {
+        title: 'Tenant isolation in one place',
+        body: `<p>A school group (<code>MotherSchool</code> in the code) owns several schools. Instead of re-implementing access checks in every view, <code>permissions.py</code> holds a small set of decorators, and any view that takes a <code>school_id</code>, <code>class_id</code>, <code>user_id</code> or <code>bill_id</code> is expected to use one of them.</p>`,
+      },
+      {
+        title: 'Reports off the request path',
+        body: `<p>Weekly attendance reports are rendered with ReportLab in a Celery worker, and the page polls an export job for its status. On Heroku the web and worker dynos don’t share a filesystem, so the finished PDF or ZIP is handed back through Redis — already there as the Celery broker — with a 15-minute expiry, rather than making a round trip through S3.</p>`,
+      },
+      {
+        title: 'Reports that point back to the source',
+        body: `<p>There are three distinct report templates. Each generated report gets a stable UUID, and the PDF carries a QR code that opens a live web version of the same report.</p>`,
+      },
+      {
+        title: 'Right-to-left in PDFs',
+        body: `<p>Reports include Arabic text, which ReportLab doesn’t shape on its own. Text is reshaped and reordered with <code>arabic-reshaper</code> and <code>python-bidi</code> before it is drawn.</p>`,
+      },
+      {
+        title: 'Explicit access to money',
+        body: `<p>Billing and reports used to be granted implicitly to certain administrators. That rule was replaced with an explicit per-account permission that a head administrator switches on, so access to financial views is always a deliberate decision.</p>`,
+      },
+    ],
+    stackGroups: [
+      ['Backend', 'Python, Django, PostgreSQL'],
+      ['Background work', 'Celery, Redis'],
+      ['Interface', 'Server-rendered Django templates, Tailwind CSS, Alpine.js'],
+      ['Documents', 'ReportLab, qrcode, openpyxl'],
+      ['Hosting', 'Heroku (web and worker dynos)'],
+    ],
+  },
+
+  {
     slug: 'connecfy',
     name: 'Connecfy',
     featured: true,
-    showcase: true,
     kind: 'SMS infrastructure',
     platform: 'Web API, staff console and Android sender app',
     summary:
@@ -76,117 +149,10 @@ export const projects = [
   },
 
   {
-    slug: 'suivedu',
-    name: 'SuivEdu',
-    featured: true,
-    kind: 'School attendance',
-    platform: 'Web app, installable as a PWA',
-    summary:
-      'Attendance tracking for schools. Teachers take the register, and parents hear about an absence by SMS or email instead of at the end of the term.',
-    detail:
-      'One school group can run several schools. Every view that takes a school, class, user or bill id goes through the same small set of permission decorators, so tenant isolation is checked in one place instead of in each view.',
-    role: 'Design, backend, frontend, deployment',
-    status: { label: 'Live', live: true },
-    links: [{ label: 'suivedu.com', href: 'https://www.suivedu.com' }],
-    stack: ['Django', 'PostgreSQL', 'Celery', 'Redis', 'Tailwind CSS', 'Alpine.js', 'ReportLab'],
-    image: {
-      src: '/images/suivedu.webp',
-      width: 1600,
-      height: 1000,
-      alt: 'The SuivEdu sign-in page in Arabic, with a French language switch.',
-      caption: 'The sign-in page. The interface is available in Arabic and French.',
-    },
-    overview: `
-      <p>SuivEdu digitises the attendance register. Teachers mark who is missing, the school sees it the same day, and parents are notified automatically. Around that core sit the things a school actually asks for once it relies on the register: class and student management, custom messages to parents, statistics, printable weekly reports and billing.</p>
-      <p>It is built for school groups rather than single schools. A head administrator sees every school in the group; administrators, teachers and students see only their own.</p>
-    `,
-    notes: [
-      {
-        title: 'Tenant isolation in one place',
-        body: `<p>A school group (<code>MotherSchool</code> in the code) owns several schools. Instead of re-implementing access checks in every view, <code>permissions.py</code> holds a small set of decorators, and any view that takes a <code>school_id</code>, <code>class_id</code>, <code>user_id</code> or <code>bill_id</code> is expected to use one of them.</p>`,
-      },
-      {
-        title: 'Reports off the request path',
-        body: `<p>Weekly attendance reports are rendered with ReportLab in a Celery worker, and the page polls an export job for its status. On Heroku the web and worker dynos don’t share a filesystem, so the finished PDF or ZIP is handed back through Redis — already there as the Celery broker — with a 15-minute expiry, rather than making a round trip through S3.</p>`,
-      },
-      {
-        title: 'Reports that point back to the source',
-        body: `<p>There are three distinct report templates. Each generated report gets a stable UUID, and the PDF carries a QR code that opens a live web version of the same report.</p>`,
-      },
-      {
-        title: 'Right-to-left in PDFs',
-        body: `<p>Reports include Arabic text, which ReportLab doesn’t shape on its own. Text is reshaped and reordered with <code>arabic-reshaper</code> and <code>python-bidi</code> before it is drawn.</p>`,
-      },
-      {
-        title: 'Explicit access to money',
-        body: `<p>Billing and reports used to be granted implicitly to certain administrators. That rule was replaced with an explicit per-account permission that a head administrator switches on, so access to financial views is always a deliberate decision.</p>`,
-      },
-    ],
-    stackGroups: [
-      ['Backend', 'Python, Django, PostgreSQL'],
-      ['Background work', 'Celery, Redis'],
-      ['Interface', 'Server-rendered Django templates, Tailwind CSS, Alpine.js'],
-      ['Documents', 'ReportLab, qrcode, openpyxl'],
-      ['Hosting', 'Heroku (web and worker dynos)'],
-    ],
-  },
-
-  {
-    slug: 'arsalane-soutien',
-    name: 'Arsalane Soutien',
-    featured: true,
-    showcase: true,
-    kind: 'Management software',
-    platform: 'Web app and public website',
-    summary:
-      'Software for a tutoring centre in El Jadida: students, groups, teachers, monthly billing, payments and teacher pay, alongside the centre’s public website.',
-    detail:
-      'Staff enter facts: enrolments, agreed rates, payments received. What each family owes, what each teacher is owed and how the month went are derived from those facts, and the rules are written down as invariants with tests.',
-    role: 'Design, backend, frontend, deployment',
-    status: { label: 'Live', live: true },
-    links: [{ label: 'arsalanesoutien.com', href: 'https://arsalanesoutien.com' }],
-    stack: ['Django', 'PostgreSQL', 'JavaScript', 'Heroku'],
-    image: {
-      src: '/images/arsalane.webp',
-      width: 1600,
-      height: 1000,
-      alt: 'The Arsalane Soutien homepage, with the headline “Travailler mieux. Avancer ensemble.”',
-      caption: 'The public website. The management application sits behind a staff login.',
-    },
-    overview: `
-      <p>Arsalane Soutien is a tutoring centre for students from primary school to the baccalaureate. The application replaces the centre’s manual bookkeeping: enrolling students into groups, scheduling, generating each month’s charges, recording payments, and working out what the centre owes its teachers.</p>
-      <p>The public website is a separate, static codebase with no build step, and the Django application sits behind a staff login. The interface is in French.</p>
-    `,
-    notes: [
-      {
-        title: 'Money lives in services',
-        body: `<p>No financial logic is written in templates or large views. Each critical workflow — charges, collection, monthly statements, payouts — is a service that can be tested on its own, runs inside <code>transaction.atomic</code>, and locks the rows it depends on with <code>select_for_update()</code>.</p>`,
-      },
-      {
-        title: 'History doesn’t rewrite itself',
-        body: `<p>Changing a student’s rate doesn’t touch months that were already billed. Changing a group’s teacher doesn’t move past months to the new teacher. A frozen monthly statement keeps the rate and percentage it was calculated with, and only an explicit recalculation or a documented adjustment can change it.</p>`,
-      },
-      {
-        title: 'Constraints in the database',
-        body: `<p>The rules that must never break are enforced by PostgreSQL, not just by the code: one charge per enrolment per month, one statement per teacher per month. Amounts are <code>Decimal</code>, rounded half-up to two places.</p>`,
-      },
-      {
-        title: 'Written down, then tested',
-        body: `<p>The README lists eleven financial invariants in plain language, and the test suite, which has more than 400 test cases, checks them.</p>`,
-      },
-    ],
-    stackGroups: [
-      ['Backend', 'Python, Django 5.1, PostgreSQL'],
-      ['Interface', 'Server-rendered templates, a small CSS design system, vanilla JavaScript'],
-      ['Public site', 'Static HTML, CSS and JavaScript'],
-      ['Hosting', 'Heroku'],
-    ],
-  },
-
-  {
     slug: 'manostock',
     name: 'ManoStock',
     featured: true,
+    showcase: true,
     kind: 'Business software',
     platform: 'Web app, Android app and a local print agent',
     summary:
@@ -194,6 +160,22 @@ export const projects = [
     detail:
       'The till is a web page served from Heroku; the receipt printer is a USB device in the shop. A small local agent, listening only on <code>127.0.0.1</code>, bridges the two and speaks ESC/POS to the printer, so receipts print without a dialog.',
     role: 'Design, backend, Android app, print agent',
+    image: {
+      src: '/images/manostock-till.webp',
+      width: 1600,
+      height: 1000,
+      alt: 'The ManoStock till: an open ticket with four products, a 201.00 DH total, payment method choices and quick cash amounts.',
+      caption: 'The till, with an open ticket. Running locally with sample data.',
+    },
+    gallery: [
+      {
+        src: '/images/manostock-stock.webp',
+        width: 1600,
+        height: 1000,
+        alt: 'The ManoStock stock page: categories on the left, and products with barcodes, quantities, prices and stock value.',
+        caption: 'Stock, with barcodes, prices and stock value per product.',
+      },
+    ],
     stack: ['Django', 'PostgreSQL', 'Kotlin', 'Jetpack Compose', 'Python'],
     overview: `
       <p>ManoStock started as a web app for the paperwork of a small business: inventory, orders, clients, invoices and expenses. Later it gained a proper point-of-sale till, and the till needed two things a browser can’t do well on its own — scan barcodes quickly and print receipts silently.</p>
@@ -238,6 +220,7 @@ export const projects = [
     slug: 'lifeos',
     name: 'LifeOS',
     featured: true,
+    showcase: true,
     kind: 'Desktop app',
     platform: 'macOS and Windows, with an Android companion',
     summary:
@@ -245,6 +228,22 @@ export const projects = [
     detail:
       'The study timer is an event-replay engine of about 30 lines of Python, mirrored by hand in Kotlin for the Android app. Both sides have matching test suites, so “the two agree” is checked rather than assumed.',
     role: 'Design, backend, desktop wrapper, Android app',
+    image: {
+      src: '/images/lifeos.webp',
+      width: 1600,
+      height: 1000,
+      alt: 'The LifeOS home screen: next tasks with projects and due dates, today’s events, and the sidebar of modules.',
+      caption: 'Home: what’s next and what’s on today. Demo data from the app’s own fixture command.',
+    },
+    gallery: [
+      {
+        src: '/images/lifeos-finance.webp',
+        width: 1600,
+        height: 1000,
+        alt: 'The LifeOS finance screen: totals across personal and business accounts, this month’s income and expenses, and recent activity.',
+        caption: 'Finance, with personal and business accounts kept apart. Fictional figures.',
+      },
+    ],
     status: { label: 'Beta · v0.1.0-beta.1' },
     stack: ['Django', 'SQLite', 'Swift', 'Kotlin', 'Jetpack Compose'],
     overview: `

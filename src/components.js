@@ -23,6 +23,17 @@ export function screenshot(project, { eager = false, caption = false } = {}) {
     </figure>`;
 }
 
+// Extra screenshots on a case study. Same markup, no transition name.
+export function figure(image) {
+  return html`
+    <figure class="shot">
+      <img src="${image.src}" srcset="${image.src.replace('.webp', '-800.webp')} 800w, ${image.src} ${image.width}w"
+        sizes="(min-width: 76rem) 60rem, 100vw" width="${image.width}" height="${image.height}" alt="${image.alt}"
+        loading="lazy" decoding="async">
+      <figcaption>${image.caption}</figcaption>
+    </figure>`;
+}
+
 // Label/value pairs, e.g. Role, Status, Links. Rows with no value are skipped.
 export function facts(rows, className = 'facts') {
   const present = rows.filter(([, value]) => value != null && value !== '' && !(Array.isArray(value) && !value.length));

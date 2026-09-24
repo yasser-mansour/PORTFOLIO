@@ -1,7 +1,7 @@
 import { html, raw } from '../html.js';
 import { site } from '../site.js';
 import { featured } from '../projects.js';
-import { external, facts, list, screenshot, status } from '../components.js';
+import { external, facts, figure, list, screenshot, status } from '../components.js';
 
 function flow({ caption, steps, note }) {
   return html`
@@ -52,6 +52,13 @@ export function projectPage(p) {
           <section class="section" aria-labelledby="structure">
             <h2 id="structure">How it fits together</h2>
             ${flow(p.flow)}
+          </section>`}
+
+        ${p.gallery &&
+        html`
+          <section class="section" aria-labelledby="screens">
+            <h2 id="screens">Screens</h2>
+            <div class="gallery">${p.gallery.map(figure)}</div>
           </section>`}
 
         <section class="section" aria-labelledby="engineering">
