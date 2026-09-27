@@ -385,10 +385,25 @@ a:hover {
   line-height: 1.55;
 }
 
+/* Photo and a few facts: beside the text on phones, in the rail on desktop. */
+.intro-side {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.intro-photo {
+  flex: none;
+  width: 5.5rem;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
 .intro-meta {
   display: grid;
   gap: var(--space-3);
-  margin: var(--space-6) 0 0;
+  margin: 0;
   font-size: var(--text-sm);
 }
 
@@ -420,12 +435,17 @@ a:hover {
     grid-row: 3;
   }
 
-  .intro-meta {
+  .intro-side {
     grid-column: 1;
     grid-row: 3;
-    align-self: start;
+    display: block;
     margin-top: var(--space-7);
     padding-top: 0.35rem;
+  }
+
+  .intro-photo {
+    width: 100%;
+    margin-bottom: var(--space-5);
   }
 }
 

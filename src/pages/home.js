@@ -53,10 +53,13 @@ export function home() {
           <p>I build software for schools, small businesses and myself. Mostly Django backends with PostgreSQL behind them, and an Android or desktop app when the problem needs one.</p>
           <p>Some of it runs in production. Some of it only runs on my laptop.</p>
         </div>
-        <dl class="intro-meta">
-          <div><dt>Now</dt><dd>Building <a href="/work/lifeos/">LifeOS</a>, in beta</dd></div>
-          <div><dt>Based in</dt><dd>El Jadida and Meknès, Morocco</dd></div>
-        </dl>
+        <div class="intro-side">
+          <img class="intro-photo" src="/images/yasser-mansour.webp" width="408" height="612" alt="Portrait of Yasser Mansour." decoding="async">
+          <dl class="intro-meta">
+            <div><dt>Now</dt><dd>Building <a href="/work/lifeos/">LifeOS</a>, in beta</dd></div>
+            <div><dt>Based in</dt><dd>El Jadida and Meknès, Morocco</dd></div>
+          </dl>
+        </div>
       </section>
 
       <section class="section wrap" id="work" aria-labelledby="work-title">
