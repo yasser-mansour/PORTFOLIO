@@ -49,6 +49,7 @@ export function home() {
       <section class="intro wrap" aria-labelledby="intro-name">
         <h1 id="intro-name">${site.name}</h1>
         <p class="intro-role">Developer. First-year engineering student at ${site.school}.</p>
+        <img class="intro-portrait" src="/images/yasser-mansour-hero.webp" width="408" height="498" alt="Portrait of Yasser Mansour." fetchpriority="high">
         <div class="intro-text">
           <p>I build software for schools, small businesses and myself. Mostly Django backends with PostgreSQL behind them, and an Android or desktop app when the problem needs one.</p>
           <p>Some of it runs in production. Some of it only runs on my laptop.</p>

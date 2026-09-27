@@ -360,12 +360,23 @@ a:hover {
    Home
    ------------------------------------------------------------------ */
 
+/*
+  The intro. The portrait is a cutout with a flat bottom edge, so it is
+  set to stand on a line: the role's last line on phones, the rule that
+  closes the intro on desktop. It needs no frame in either theme.
+*/
 .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: var(--space-5);
   padding-top: var(--space-9);
   padding-bottom: var(--space-8);
 }
 
 .intro h1 {
+  grid-column: 1;
+  align-self: end;
   font-size: var(--text-3xl);
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -373,12 +384,21 @@ a:hover {
 }
 
 .intro-role {
+  grid-column: 1;
   margin-top: var(--space-3);
   font-size: var(--text-lg);
   color: var(--ink-2);
 }
 
+.intro-portrait {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: end;
+  width: 5.75rem;
+}
+
 .intro-text {
+  grid-column: 1 / -1;
   max-width: 34rem;
   margin-top: var(--space-7);
   font-size: var(--text-lg);
@@ -386,6 +406,7 @@ a:hover {
 }
 
 .intro-meta {
+  grid-column: 1 / -1;
   display: grid;
   gap: var(--space-3);
   margin: var(--space-6) 0 0;
@@ -405,19 +426,34 @@ a:hover {
 
 @media (min-width: 60rem) {
   .intro {
-    display: grid;
-    grid-template-columns: var(--rail) minmax(0, 1fr);
+    grid-template-columns: var(--rail) minmax(0, 34rem) minmax(0, 1fr);
+    grid-template-rows: auto;
     column-gap: var(--rail-gap);
+    padding-bottom: 0;
   }
 
   .intro h1,
   .intro-role {
-    grid-column: 1 / -1;
+    grid-column: 1 / 3;
+  }
+
+  /*
+    Sits in the paragraph's row, standing on the rule. Its height is kept
+    below the row's, so the portrait never makes the intro taller; on
+    wide screens its top meets the paragraph's first line.
+  */
+  .intro-portrait {
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: end;
+    align-self: end;
+    width: 10.75rem;
   }
 
   .intro-text {
     grid-column: 2;
     grid-row: 3;
+    margin-bottom: var(--space-8);
   }
 
   .intro-meta {
