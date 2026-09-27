@@ -440,14 +440,14 @@ a:hover {
   /*
     Sits in the paragraph's row, standing on the rule. Its height is kept
     below the row's, so the portrait never makes the intro taller; on
-    wide screens its top meets the paragraph's first line.
+    wide screens its top sits just above the paragraph's first line.
   */
   .intro-portrait {
     grid-column: 3;
     grid-row: 3;
     justify-self: end;
     align-self: end;
-    width: 10.75rem;
+    width: 12.25rem;
   }
 
   .intro-text {
@@ -462,6 +462,13 @@ a:hover {
     align-self: start;
     margin-top: var(--space-7);
     padding-top: 0.35rem;
+  }
+}
+
+/* Where the column has room, the portrait moves a little in from the edge. */
+@media (min-width: 72rem) {
+  .intro-portrait {
+    translate: -2rem 0;
   }
 }
 
