@@ -1,55 +1,102 @@
 <!doctype html>
-<!--
-  Source for public/og.png (1200×630). To regenerate after a change:
-  build the site, then from the project root run
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
-    --window-size=1200,630 --screenshot=public/og.png "file://$PWD/scripts/og.html"
--->
+<!-- Social card source. Serve this temporarily from dist/__og.html after building.
+     Capture the 40:21 canvas, then export at 1200 × 630 to public/og.png. -->
 <html lang="en">
-<meta charset="utf-8">
-<title>Open Graph image</title>
-<style>
-  @font-face { font-family: Plex; src: url("../public/fonts/ibm-plex-sans.woff2"); font-weight: 400 600; }
-  @font-face { font-family: PlexMono; src: url("../public/fonts/ibm-plex-mono-400.woff2"); }
-  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
-  body {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 84px 96px 76px;
-    background: #f6f5f1;
-    color: #1a1916;
-    font-family: Plex, sans-serif;
-  }
-  h1 { margin: 0; font-size: 92px; font-weight: 500; letter-spacing: -0.03em; line-height: 1; }
-  p { margin: 28px 0 0; font-size: 34px; color: #47453f; }
-  footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 28px;
-    border-top: 2px solid #dddad2;
-    font-family: PlexMono, monospace;
-    font-size: 26px;
-    color: #6b675f;
-  }
-  footer span:last-child::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-right: 14px;
-    background: #8a5a12;
-  }
-</style>
-<body>
-  <div>
-    <h1>Yasser Mansour</h1>
-    <p>Developer. Engineering student at ENSAM Meknès.</p>
-  </div>
-  <footer>
-    <span>El Jadida · Meknès, Morocco</span>
-    <span>yassermansour.com</span>
-  </footer>
-</body>
+  <meta charset="utf-8" />
+  <title>Yasser Mansour — social image source</title>
+  <style>
+    @font-face {
+      font-family: Bricolage;
+      src: url("/fonts/bricolage-grotesque-latin-wght-normal.woff2");
+      font-weight: 200 800;
+    }
+    @font-face {
+      font-family: Mono;
+      src: url("/fonts/ibm-plex-mono-400.woff2");
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 52.5vw;
+      overflow: hidden;
+    }
+    body {
+      background: #f2efe8;
+      color: #24241f;
+      padding: 3.5vw 4.5vw;
+      display: flex;
+      flex-direction: column;
+      font-family: Bricolage, sans-serif;
+    }
+    header,
+    footer {
+      font:
+        400 1.1vw/1.4 Mono,
+        monospace;
+      display: flex;
+      justify-content: space-between;
+    }
+    header {
+      text-transform: uppercase;
+      padding-bottom: 1.3vw;
+      border-bottom: 1px solid #d4d0c6;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 12vw;
+      font-weight: 600;
+      line-height: 0.85;
+      letter-spacing: -0.075em;
+      margin: 0;
+    }
+    h1 span {
+      color: #b84024;
+    }
+    img {
+      display: block;
+      width: 18.5vw;
+      height: auto;
+      filter: grayscale(1);
+      mix-blend-mode: multiply;
+      background: #e2dfd6;
+      padding: 1vw 1vw 0;
+    }
+    footer {
+      border-top: 1px solid #d4d0c6;
+      padding-top: 1.3vw;
+    }
+    footer span:first-child {
+      font:
+        400 2.1vw/1 Georgia,
+        serif;
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <header>
+      <span>Software builder & founder</span><span>Morocco / ENSAM Meknès</span>
+    </header>
+    <main>
+      <h1>Yasser<br />Mansour<span>.</span></h1>
+      <img
+        src="/images/yasser-mansour-hero.webp"
+        width="408"
+        height="498"
+        alt="Yasser Mansour"
+      />
+    </main>
+    <footer>
+      <span>Useful software. From the ground up.</span
+      ><span>yassermansour.com</span>
+    </footer>
+  </body>
 </html>

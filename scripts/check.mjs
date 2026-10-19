@@ -38,8 +38,12 @@ for (const file of pages) {
 
   if (!/<html lang="en">/.test(doc)) fail(file, 'missing lang');
   if (!/<title>[^<]{10,}<\/title>/.test(doc)) fail(file, 'missing or short <title>');
-  if (!/<meta name="description" content="[^"]{30,}">/.test(doc)) fail(file, 'missing or short description');
-  if (!is404 && !doc.includes(`<link rel="canonical" href="${SITE}${url}">`)) fail(file, 'wrong canonical');
+  // Read tag attributes independently of formatting, line breaks and HTML's optional void-tag slash.
+  const tags = (name) => [...doc.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(([tag]) =>
+    Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value])));
+  const description = tags('meta').find((tag) => tag.name === 'description')?.content;
+  if (!description || description.length < 30) fail(file, 'missing or short description');
+  if (!is404 && !tags('link').some((tag) => tag.rel === 'canonical' && tag.href === `${SITE}${url}`)) fail(file, 'wrong canonical');
   if ((doc.match(/<h1[\s>]/g) ?? []).length !== 1) fail(file, 'needs exactly one <h1>');
   if (!doc.includes('id="main"')) fail(file, 'missing main landmark target');
 

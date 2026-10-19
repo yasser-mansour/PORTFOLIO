@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Portfolio browser audit</title
+  ><style>
+    body {
+      font: 14px/1.6 system-ui;
+      margin: 30px;
+    }
+    iframe {
+      display: block;
+      height: 900px;
+      border: 1px solid #aaa;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+    td,
+    th {
+      padding: 5px 12px;
+      text-align: left;
+    }
+    th {
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+  <h1>Portfolio browser audit</h1>
+  <p id="status">Running…</p>
+  <pre id="report"></pre>
+  <iframe id="test" title="Page being tested"></iframe>
+  <script type="module">
+    const paths = [
+      "/",
+      "/about/",
+      "/work/understand/",
+      "/work/suivedu/",
+      "/work/connecfy/",
+      "/work/manostock/",
+      "/work/lifeos/",
+      "/404.html",
+    ];
+    const widths = [320, 390, 768, 1024, 1440];
+    const f = document.querySelector("iframe"),
+      results = [];
+    const frameLoad = (src) =>
+      new Promise((resolve) => {
+        f.onload = resolve;
+        f.src = src;
+      });
+    for (const path of paths)
+      for (const width of widths) {
+        f.width = width;
+        await frameLoad(path);
+        const d = f.contentDocument;
+        await d.fonts.ready;
+        d.querySelectorAll("img").forEach((i) => (i.loading = "eager"));
+        await Promise.all([...d.images].map((i) => i.decode().catch(() => {})));
+        await new Promise((r) =>
+          requestAnimationFrame(() => requestAnimationFrame(r)),
+        );
+        const visible = (e) =>
+          !!(
+            e.getClientRects().length &&
+            getComputedStyle(e).visibility !== "hidden"
+          );
+        const name = (e) =>
+          e.getAttribute("aria-label") ||
+          [...e.querySelectorAll("img")].map((i) => i.alt).join("") ||
+          [...e.childNodes]
+            .filter(
+              (n) =>
+                n.nodeType === 3 ||
+                (n.nodeType === 1 &&
+                  getComputedStyle(n).display !== "none" &&
+                  n.getAttribute("aria-hidden") !== "true"),
+            )
+            .map((n) => n.textContent)
+            .join("")
+            .trim();
+        const issues = [];
+        if (d.documentElement.scrollWidth > width + 1)
+          issues.push("horizontal overflow: " + d.documentElement.scrollWidth);
+        if (d.querySelectorAll("h1").length !== 1) issues.push("h1 count");
+        for (const i of d.images)
+          if (!i.complete || !i.naturalWidth)
+            issues.push("broken image " + i.src);
+        for (const e of d.querySelectorAll("a,button"))
+          if (visible(e) && !name(e))
+            issues.push("unnamed control " + e.outerHTML.slice(0, 200));
+        for (const e of d.querySelectorAll("button")) {
+          const b = e.getBoundingClientRect();
+          if (visible(e) && (b.width < 24 || b.height < 24))
+            issues.push("small control " + e.textContent);
+        }
+        const escaped = [...d.querySelectorAll("body *")]
+          .filter((e) => {
+            const b = e.getBoundingClientRect();
+            return (
+              b.width &&
+              b.right > width + 1 &&
+              getComputedStyle(e).position !== "fixed"
+            );
+          })
+          .slice(0, 5)
+          .map((e) => e.tagName + "." + e.className);
+        results.push({
+          path,
+          width,
+          scrollWidth: d.documentElement.scrollWidth,
+          issues,
+          ...(issues.length ? { escaped } : {}),
+        });
+        document.querySelector("#status").textContent =
+          `Running ${results.length}/40`;
+      }
+    document.querySelector("#status").textContent =
+      `Complete: ${results.length} page/width combinations; ${results.filter((r) => r.issues.length).length} failures`;
+    document.querySelector("#report").textContent = JSON.stringify(
+      results,
+      null,
+      2,
+    );
+  </script>
+</html>
